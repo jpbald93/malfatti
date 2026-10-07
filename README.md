@@ -133,7 +133,7 @@ Feuerbach, Miquel, Brahmagupta and Malfatti in Lean 4* (J. Bald, in preparation)
   title        = {The Malfatti circles in Lean 4},
   year         = {2026},
   howpublished = {\url{https://github.com/jpbald93/malfatti}},
-  note         = {Lean 4 + Mathlib v4.33.1. Commit: COMMIT_PLACEHOLDER}
+  note         = {Lean 4 + Mathlib v4.33.1. Commit: d39519346e71c9af8c349490a4dac5388de4d8f2}
 }
 ```
 
