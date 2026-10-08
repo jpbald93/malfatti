@@ -116,6 +116,20 @@ toolchain, Lean `v4.33.1` (`lean-toolchain`; `elan` installs it automatically), 
 `lake exe cache get` (or `lake build`) first so that the pinned Mathlib checkout is present in
 `.lake/packages`.
 
+## How to run the checks
+
+From the repository root, after the build steps above:
+
+```sh
+lake build                 # build the library (pinned Lean and Mathlib)
+./gate.sh                  # sorry/axiom/token gate; prints PASS (N declarations, standard axioms only)
+bash tests/tamper.sh       # plants six fake proofs in scratch copies; each must be rejected
+python3 code/check_malfatti.py   # independent floating-point check (not part of the proof)
+```
+
+`gate.sh` exits nonzero on any failure. `tests/tamper.sh` reuses `.lake/build`, so run `lake build`
+first. The checker script is deterministic (fixed random seed) and needs only Python 3 and its standard library. Its output is stored in `code/check.out`; to compare, run `python3 code/check_malfatti.py | diff - code/check.out`.
+
 ## Note on how this was produced
 
 The formal proofs, checking scripts and documentation were developed with the help of a
@@ -124,8 +138,7 @@ responsible for the result. The Lean kernel checks every proof.
 
 ## Citation
 
-This repository accompanies the manuscript *Four circle theorems by coordinate certificates:
-Feuerbach, Miquel, Brahmagupta and Malfatti in Lean 4* (J. Bald, in preparation).
+This repository accompanies the manuscript *The Malfatti circles in Lean 4, with independent certificate proofs of Feuerbach, Miquel and Brahmagupta* (J. Bald, in preparation).
 
 ```bibtex
 @misc{bald2026malfatti,
@@ -139,4 +152,5 @@ Feuerbach, Miquel, Brahmagupta and Malfatti in Lean 4* (J. Bald, in preparation)
 
 ## License
 
-Apache 2.0.
+Code and Lean sources: Apache License 2.0 (`LICENSE`), copyright 2026 Josh Bald (the licence
+Mathlib uses). The accompanying paper is licensed separately under CC BY 4.0.

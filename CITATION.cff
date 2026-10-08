@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it, and the accompanying paper, as below."
+title: "The Malfatti circles in Lean 4"
+type: software
+authors:
+  - family-names: Bald
+    given-names: Josh
+    email: jpbald93@gmail.com
+    affiliation: "Independent researcher, Ontario, Canada"
+    orcid: "https://orcid.org/0009-0002-1317-6489"
+license: Apache-2.0
+repository-code: "https://github.com/jpbald93/malfatti"
+commit: d39519346e71c9af8c349490a4dac5388de4d8f2
+keywords:
+  - Lean 4
+  - Mathlib
+  - formal verification
+  - Euclidean geometry
+preferred-citation:
+  type: article
+  title: "The Malfatti circles in Lean 4, with independent certificate proofs of Feuerbach, Miquel and Brahmagupta"
+  authors:
+    - family-names: Bald
+      given-names: Josh
+      orcid: "https://orcid.org/0009-0002-1317-6489"
+  year: 2026
+  status: preprint
